@@ -59,7 +59,7 @@ f = @(x) J([x.K1 x.K2],sys,x_ini,Q,R);
 % ベイズ最適化実行
 
 % デフォルトの獲得関数は実行時間を加味するので、毎回結果が異なる。
-% 本来あまり使われない？が、期待改善量(「プラス」なし)を選択
+% 本来あまり使われない？が、今回は期待改善量(「プラス」なし)を選択
 % https://jp.mathworks.com/help/stats/bayesian-optimization-algorithm.html
 results = bayesopt(f,[K1,K2], ...
     'AcquisitionFunctionName','expected-improvement',... 
